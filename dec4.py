@@ -4,7 +4,7 @@ import re
 from collections import Counter
 
 test_pattern = "XMAS"
-file_name = 'dec4_input_example.txt'
+file_name = 'example_inputs/dec4_input_example.txt'
 
 def number_of_pattern_found(pattern, char_list):
     forward_test = "".join(char_list)

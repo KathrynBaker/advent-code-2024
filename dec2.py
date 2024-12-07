@@ -31,7 +31,7 @@ def safe_or_unsafe(record):
                         return "SAFE"
 
 
-df = pd.read_table("dec2_input.txt", header=None, sep=" ", names=range(9))
+df = pd.read_table("inputs/dec2_input.txt", header=None, sep=" ", names=range(9))
 safe_unsafe = []
 check = []
 for i in range(len(df)):

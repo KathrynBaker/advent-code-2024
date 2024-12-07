@@ -3,7 +3,7 @@ import re
 pattern = "mul\([0-9]+,[0-9]+\)"
 pat = re.compile(pattern)
 
-with open("dec3_input.txt", "r") as file:
+with open("inputs/dec3_input.txt", "r") as file:
     file_content = file.read()
 
 print(re.search(pattern, file_content))

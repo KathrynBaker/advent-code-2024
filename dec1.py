@@ -26,5 +26,5 @@ def get_similarity(first_list, second_list):
 # df = pd.read_table("dec1_input.txt", header=None, names=["list1", "list2"], sep="   ")
 # print(get_distance(df["list1"].tolist(), df["list2"].tolist()))
 
-df = pd.read_table("dec1_input.txt", header=None, names=["list1", "list2"], sep="   ")
+df = pd.read_table("inputs/dec1_input.txt", header=None, names=["list1", "list2"], sep="   ")
 print(get_similarity(df["list1"].tolist(), df["list2"].tolist()))

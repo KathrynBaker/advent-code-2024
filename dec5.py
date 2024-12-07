@@ -42,7 +42,7 @@ def rule_passing(_value, _line, _rules):
     return _rules_kept
 
 
-with open("dec5_input.txt", "r") as file:
+with open("inputs/dec5_input.txt", "r") as file:
     file_content = file.read()
 
 rule_matches = re.findall(r"[0-9][0-9]\|[0-9][0-9]", file_content)
