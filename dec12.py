@@ -20,6 +20,19 @@ MIIISIJEEE
 MMMISSJEEE
 """
 
+simple_example = """
+......CC..
+......CCC.
+.....CC...
+...CCC....
+....C..C..
+....CC....
+.....C....
+..........
+..........
+..........
+"""
+
 
 class plot_region:
     def __init__(self, region_name, row, col):
@@ -27,6 +40,7 @@ class plot_region:
         self.area = 1
         self.perimeter = 4
         self.locations = {(row, col)}
+        self.num_regions = 1
 
     def add_to_area(self, row, col):
         matches = self.locations.intersection({(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)})
@@ -40,10 +54,11 @@ class plot_region:
             self.perimeter = self.perimeter + 2
 
     def __str__(self):
-        return f"Region {self.region_name}: Area = {self.area}; Perimeter = {self.perimeter}"
+        return f"Region {self.region_name}: Area = {self.area}; Perimeter = {self.perimeter}; Regions = {self.num_regions}"
 
     def calculate_price(self):
         return self.area*self.perimeter
+
 
 dict_plot = {}
 
@@ -53,10 +68,14 @@ for row_index in range(len(simple_example)):
     print(simple_example[row_index])
     row = simple_example[row_index]
     for column_index in range(len(row)):
-        if row[column_index] in dict_plot.keys():
+        if row[column_index] == ".":
+            pass
+        elif row[column_index] in dict_plot.keys():
             dict_plot[row[column_index]].add_to_area(row_index, column_index)
         else:
             dict_plot[row[column_index]] = plot_region(row[column_index], row_index, column_index)
+        for item in dict_plot.keys():
+            print(dict_plot[item])
 
 cost = 0
 for item in dict_plot.keys():
