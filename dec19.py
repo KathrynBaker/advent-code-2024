@@ -2,8 +2,13 @@ from collections import Counter
 
 available_string = "r, wr, b, g, bwu, rb, gb, br"
 available = ["r", "wr", "b", "g", "bwu", "rb", "gb", "br"]
+available_3 = ["bwu"]
+available_2 = ["wr", "rb", "gb", "br"]
+available_1 = ["r", "b", "g"]
+max_available = 3
 
 looking_for = "brwrr"
+chars_looking_for = ["b", "r", "w"]
 
 chars_available = Counter(available_string).keys()
 
@@ -35,8 +40,10 @@ else:
             print(f"{looking_for[i:i+check_len]} isn't available")
     print(f"I've gotten to a length of {count} with {check_len}")
 
+    # todo
+    # This is certainly a recursion type thing, I like having the quick check for any unavailable colours
+    # but I think I need to do the checks in reverse order, as the longer the better
 
-    check_len = 2
-    if looking_for[:check_len] in available:
-        print("Got it, repeat for remaining string")
+    check_len = max_available
+
 
